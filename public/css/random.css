@@ -1,6 +1,7 @@
 body {
   width: 575px;
   margin: 20px auto;
+  border: 1px solid black;
 }
 
 h1{
@@ -15,6 +16,7 @@ label{
   padding-left: 25px;
   font-weight: bold;
 }
+
 textarea {
   background-color: rgb(219, 226, 221);
   font-family: "Comic Sans MS", "Helvetica", serif;
@@ -55,6 +57,13 @@ textarea {
   height: 175px;
   text-align: center;
   vertical-align: top;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.container {
+  width: 540px;
+  margin: 30px auto;
 }
 
 li {
