@@ -1,0 +1,35 @@
+<h1>Team Randomizer</h1>
+  <form action="/pick_random" method="POST">
+    <div>
+      <label for="message" font-family="Helvetica" font-size"100px">Enter names:</label>
+      <br>
+      <textarea id="message" rows="4" cols="75" placeholder="Enter a list of names separated by a comma." name="names"></textarea>
+    </div>
+    <div>
+      <label for="team-count">Team Count: </label>
+      <br>
+      <input id="team-count" name="team_count" type="text" required>
+    </div>
+    <div>
+      <label>Method</label>
+      <input type="radio" name="deparment" value ="sales"/>Team Count
+      <input type="radio" name="deparment" value="marketing"/>Number Per Team
+    </div>
+    <div>
+      <input class="submit" type="submit" value="Choose Teams" />
+    </div>
+  </form>
+<br>
+
+<% if @arr_of_teams == nil %>
+  <p>Enter some names!</p>
+<% else %>
+  <% @arr_of_teams.each do |x| %>
+  <div class="team">
+    <p>Team <%= @arr_of_teams.index(x)+1 %></p>
+    <% x.each do |y| %>
+      <li><%= y %></li>
+      <% end %>
+    </div>
+    <% end %>
+  <%end %>
