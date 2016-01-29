@@ -54,11 +54,12 @@ textarea {
 .team {
   display: inline-block;
   width: 175px;
-  height: 175px;
   text-align: center;
   vertical-align: top;
   border: 1px solid black;
   border-radius: 3px;
+  margin: 10px;
+  padding-bottom: 30px;
 }
 
 .container {

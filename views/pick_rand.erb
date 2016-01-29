@@ -3,7 +3,7 @@
     <div>
       <label for="message">Enter names:</label>
       <br>
-      <textarea id="message" rows="4" cols="75" placeholder="Enter a list of names separated by a comma." name="names"></textarea>
+      <textarea id="message" rows="4" cols="75" value="<%=@name%>" placeholder="Enter a list of names separated by a comma." name="names"><%= @names %></textarea>
     </div>
     <div>
       <label style="font-size: 18px">Method:</label>
@@ -14,7 +14,7 @@
     <div>
       <label for="team-count">Count: </label>
       <br>
-      <input id="team-count" name="team_count" type="text" required>
+      <input id="team-count" name="team_count" value="<%= @num_of_team %>"type="text" required>
     </div>
     <br>
     <div>
@@ -23,14 +23,14 @@
   </form>
 
 <div class="container">
-<% if @arr_of_teams == nil %>
+<% if session[:arr_of_teams] == nil %>
   <p style ="margin-left: 15px" >Enter some names to get started!</p>
-<% elsif @arr_of_teams[0].is_a? String %>
+<% elsif session[:arr_of_teams][0].is_a? String %>
   <p style ="margin-left: 15px; color:red" >Invalid! Number of teams is greater than number of students entered.</p>
 <% else %>
-  <% @arr_of_teams.each do |x| %>
+  <% session[:arr_of_teams].each do |x| %>
   <div class="team">
-    <p>Team <%= @arr_of_teams.index(x)+1 %></p>
+    <p>Team <%= session[:arr_of_teams].index(x)+1 %></p>
     <% x.each do |y| %>
       <li><%= y %></li>
       <% end %>
